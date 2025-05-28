@@ -1,5 +1,6 @@
 import psutil
-
+import time
+import platform
 def get_system_stats():
     return {
         'cpu': psutil.cpu_percent(interval=1),
@@ -7,9 +8,6 @@ def get_system_stats():
         'disk': psutil.disk_usage('/').percent,
         'battery': psutil.sensors_battery().percent if psutil.sensors_battery() else None
     }
-    import psutil
-import platform
-import time
 
 def get_system_stats():
     stats = {}
